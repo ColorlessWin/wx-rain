@@ -1,0 +1,14 @@
+<!--components/navi/index.wxml-->
+<view class="navi-contanier">
+  <image 
+    class="prev icon" 
+    bind:tap="onPrev"
+    src="{{ first? disPrevSrc: prevSrc }}" 
+  />
+  <text class="title" >{{ title }}</text>
+  <image 
+    class="next icon"
+    bind:tap="onNext" 
+    src="{{ latest? disNextSrc: nextSrc }}"
+  />
+</view>

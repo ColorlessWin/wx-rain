@@ -1,0 +1,13 @@
+<!--pages/book/book.wxml-->
+<view>
+  <view class="header">
+    <view class="search-box">
+      <image class="search-icon" src="/images/icon/search.png"></image>
+      <text>搜索书籍</text>
+    </view>
+  </view>
+  <view class="content">
+    <image class="label" src="./images/quality.png"></image>
+    <book-list-cmp books="{{ books }}"/>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "periodical-skelecton": "../periodical-skelecton"
+  }
+}

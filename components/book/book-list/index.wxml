@@ -1,0 +1,7 @@
+<!--components/book/book-list/index.wxml-->
+<view class="contanier">
+  <block wx:for="{{ books }}" wx:key="id">
+    <book-cover class="item-book" book="{{ item }}"/>
+  </block>
+</view>
+

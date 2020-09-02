@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "book-list-cmp": "/components/book/book-list"
+  }
+}

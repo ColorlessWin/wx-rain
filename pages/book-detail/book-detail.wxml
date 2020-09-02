@@ -1,0 +1,11 @@
+<!--pages/book-detail/book-detail.wxml-->
+<view class="contanier">
+  <view class="header-cover block">
+    <image class="cover" src="{{ book.image }}"></image>
+    <text class="title">{{ book.title }}</text>
+    <text class="author">{{ book.author }}</text>
+  </view>
+  <view class="short-comments block">  </view>
+  <view class="summary block"> {{ book.summary }}  </view>
+  <view class="book-info block"> </view>
+</view>

@@ -1,0 +1,22 @@
+<!--pages/classic.wxml-->
+<view class="contanier">
+  <view class="header">
+    <episode-cmp index="{{ classic.index }}"/>
+    <like-cmp 
+      bind:like="onLikeHandle"
+      liked="{{ classic.like_status }}" 
+      count="{{ classic.fav_nums }}" 
+    />
+  </view>
+  <view class="content">
+    <periodical-switch classic="{{ classic }}" type="{{ classic.type }}"/>
+  </view>
+  <navi-cmp 
+    class="navi" 
+    bind:next="onNextHandle"
+    bind:prev="onPrevHandle"
+    title="{{ classic.title }}" 
+    first="{{ first }}"
+    latest="{{ latest }}"
+  />
+</view>

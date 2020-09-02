@@ -1,0 +1,29 @@
+/* components/classic/classic-skelecton/index.wxss */
+.contanier, .primary{
+  width: 100%;
+}
+
+.primary {
+  height: 480rpx;
+}
+
+.contanier {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tag {
+  width: 46rpx;
+  height: 142rpx;
+
+  position: relative;
+  right:310rpx;
+  bottom: 58rpx;
+}
+
+.content {
+  font-size: 33rpx;
+  max-width: 550rpx;
+  margin-top: 70rpx;
+}

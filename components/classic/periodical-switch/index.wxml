@@ -1,0 +1,20 @@
+<!--components/classic/periodical-switch/index.wxml-->
+<view>
+  <moive-cmp 
+    wx:if="{{ type == 100 }}" 
+    cover="{{ classic.image }}" 
+    content="{{ classic.content }}" 
+  />
+  <music-cmp 
+    wx:if="{{ type == 200 }}" 
+    cover="{{ classic.image }}" 
+    content="{{ classic.content }}" 
+    audioUrl="{{ classic.url }}"
+    title="{{ classic.title }}"
+  />
+  <essay-cmp 
+    wx:if="{{ type == 300 }}" 
+    cover="{{ classic.image }}" 
+    content="{{ classic.content }}" 
+  />
+</view>

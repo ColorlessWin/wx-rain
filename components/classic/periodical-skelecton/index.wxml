@@ -1,0 +1,9 @@
+<!--components/classic/classic-skelecton/index.wxml-->
+<view class="contanier">
+  <view class="primary">
+    <slot name="primary">  <!-- primary  --> </slot>  
+  </view>
+  <image class="tag" src="{{ tagSrc[type] }}"></image>
+  <text class="content">{{ content }}</text>
+</view>
+

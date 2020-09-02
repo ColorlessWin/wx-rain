@@ -1,0 +1,4 @@
+<!--components/classic/moive/index.wxml-->
+<periodical-skelecton content="{{ content }}" type="moive">
+  <image class="moive-cover" slot="primary" src="{{ cover }}"></image>
+</periodical-skelecton>

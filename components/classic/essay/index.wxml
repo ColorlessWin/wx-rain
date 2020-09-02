@@ -1,0 +1,5 @@
+<!--components/classic/essay/index.wxml-->
+<periodical-skelecton content="{{ content }}" type="essay">
+  <image class="essay-cover" slot="primary" src="{{ cover }}"></image>
+</periodical-skelecton>
+

@@ -1,0 +1,6 @@
+/* components/classic/moive/index.wxss */
+.moive-cover {
+  width: 100%;
+  height: 100%;
+}
+

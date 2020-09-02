@@ -1,0 +1,5 @@
+/* components/classic/essay/index.wxss */
+.essay-cover {
+  width: 100%;
+  height: 100%;
+}

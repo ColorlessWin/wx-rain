@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "moive-cmp": "../moive",
+    "music-cmp": "../music",
+    "essay-cmp": "../essay"
+  }
+}

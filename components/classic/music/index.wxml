@@ -1,0 +1,7 @@
+<!--components/classic/music/index.js.wxml-->
+<periodical-skelecton content="{{ content }}" type="music">
+  <view class="music-contanier" slot="primary">
+    <image class="cover {{ playing? 'playing': '' }}" src="{{ cover }}" />
+    <image bind:tap="onPlay" class="control-btn" src="{{ playing? pauseSrc: playSrc }}" />
+  </view>
+</periodical-skelecton>
