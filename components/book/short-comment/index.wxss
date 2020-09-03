@@ -1,0 +1,14 @@
+/* components/book/short-comment/index.wxss */
+.contanier .tag:nth-child(1) > view {
+  background-color: #fffbdd;
+}
+
+.contanier .tag:nth-child(2) > view {
+  background-color: #eefbff;
+}
+
+.nums {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #aaa
+}

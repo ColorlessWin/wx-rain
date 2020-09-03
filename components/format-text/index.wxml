@@ -1,2 +1,9 @@
 <!--components/format-text/index.wxml-->
-<text>components/format-text/index.wxml</text>
+<view>
+  <view
+    class="p"
+    wx:for="{{ fmtText }}" 
+    wx:key="index"> 
+    {{ item }} 
+  </view>
+</view>

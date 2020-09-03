@@ -13,6 +13,7 @@ Component({
   },
 
   created() {
+
     computed(this, {
       formatIndex() {
         let index = this.properties.index

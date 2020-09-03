@@ -1,0 +1,9 @@
+<!--components/book/short-comment/index.wxml-->
+<view class="contanier">
+  <block wx:for="{{ shortCmt }}" wx:key="index">
+    <tag-cmp class="tag" content="{{ item.content }}"> 
+      <text slot="after" class="nums"> +{{ item.nums }}</text>
+    </tag-cmp>
+  </block>
+</view>
+

@@ -1,6 +1,5 @@
 // pages/book-detail/book-detail.js
 const { BookModel } = require('../../models/index')
-const { computed } = require('../../extends/index')
 
 Page({
 
@@ -17,17 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    computed(this, {
-      one() {
-        console.log(this)
-        return this.data.comment.length + this.data.book_id
-      },
-      test() {
-        return this.data.comment.length + 'hello'
-      },
-    })
-
     let book_id = this.data.book_id = options.bid
     BookModel.getShortComment(book_id)
     .then(comment => {

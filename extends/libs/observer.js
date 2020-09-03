@@ -24,20 +24,19 @@ function getCaptures(obj, key) {
   return c_calls  
 }
 
-function defineObserver(obj, key, val, reactive, capture) {
+function defineObserver(obj, key, reactive, capture) {
 
   if (capture)
     var c_calls = getCaptures(obj, key)
-
   if (reactive)
     var r_calls = getReactives(obj, key)
   
   if (reactive && typeof reactive == 'function')
     r_calls.push(reactive)
-
   if (capture && typeof capture == 'function') 
     c_calls.push(capture)  
 
+  let val = obj[key]
   Object.defineProperty(obj, key, {
     configurable: true,
     enumerable: true,
@@ -83,7 +82,7 @@ function removeObserver(obj, key, type = "getter", obs) {
 function watch(obj, watchs, ctx) {
   Object.keys(watchs).forEach(key => {
     if (obj[key] && typeof watchs[key] === 'function') 
-      defineObserver(obj, key, obj[key], watchs[key].bind(ctx || obj))
+      defineObserver(obj, key, watchs[key].bind(ctx || obj))
   })
 }
 

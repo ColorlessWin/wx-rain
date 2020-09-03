@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "format-text-cmp": "/components/format-text",
+    "short-comment-cmp": "/components/book/short-comment" 
+  }
 }

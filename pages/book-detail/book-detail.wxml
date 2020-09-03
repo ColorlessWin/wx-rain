@@ -5,7 +5,37 @@
     <text class="title">{{ book.title }}</text>
     <text class="author">{{ book.author }}</text>
   </view>
-  <view class="short-comments block">  </view>
-  <view class="summary block"> {{ book.summary }}  </view>
-  <view class="book-info block"> </view>
+  <view class="short-comments block">
+    <view class="title">短评</view>
+    <short-comment-cmp comments="{{ comment }}" />
+  </view>
+  <view class="summary block"> 
+    <view class="title">简介</view>
+    <format-text-cmp text="{{ book.summary }}"/>
+  </view>
+  <view class="book-info block"> 
+    <view class="title">书籍信息</view>
+      <view class="desription">
+        <view class="col">
+          <text class="row">出版社</text>
+          <text class="row info">{{ book.publisher }}</text>
+        </view>
+        <view class="col">
+          <text class="row">出版年</text>
+          <text class="row info">{{ book.pubdate }}</text>
+        </view>
+        <view class="col">
+          <text class="row">页数</text>
+          <text class="row info">{{ book.pages }}</text>
+        </view>
+        <view class="col">
+          <text class="row">定价</text>
+          <text class="row info">{{ book.price }}</text>
+        </view>
+        <view class="col">
+          <text class="row">装帧</text>
+          <text class="row info">{{ book.binding }}</text>
+        </view>
+      </view>
+  </view>
 </view>

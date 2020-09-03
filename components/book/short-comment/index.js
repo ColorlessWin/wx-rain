@@ -1,22 +1,22 @@
-// components/format-text/index.js
-const { computed } = require('../../extends/index')
+// components/book/short-comment/index.js
+const { computed } = require('../../../extends/index')
 
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    text: {
-      type: String,
-      value: ' '
+    comments: {
+      type: Array,
+      value: []
     }
   },
 
   created() {
     computed(this, {
-      fmtText() {
-        let lines = this.properties.text.split(/\\n/g)
-        return lines
+      shortCmt() {
+        let comments = this.properties.comments
+        return comments.slice(0, 12)
       }
     })
   },

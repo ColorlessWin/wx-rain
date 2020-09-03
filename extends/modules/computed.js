@@ -1,4 +1,8 @@
-const { watch, defineObserver, removeObserver } = require('../libs/observer')
+const { 
+  defineObserver, 
+  removeObserver,
+  watch
+} = require('../libs/observer')
 
 const gather = (c, e) => () => c.push(e)
 
@@ -14,7 +18,7 @@ module.exports = (context, computeds) => {
     let temp_obs = []
     dataKeys.forEach(data_key => {
       let _gather = gather(dep_list, data_key)
-      defineObserver(data, data_key, data[data_key], undefined, _gather)
+      defineObserver(data, data_key, undefined, _gather)
       temp_obs.push({ 
         data_key, 
         gather: _gather 
