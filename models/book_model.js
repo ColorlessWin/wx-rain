@@ -17,6 +17,38 @@ const BookModel = {
     return new Promise((resolve, reject) => {
       Http.request({ url: `/book/${book_id}/detail`, success: resolve })
     })
+  },
+
+  getBookfavor(book_id) {
+    return new Promise((resolve, reject) => {
+      Http.request({ url: `/book/${book_id}/favor`, success: resolve })
+    })
+  },
+
+  postComment(book_id, content) {
+    return new Promise((resolve, reject) => {
+      Http.request({ 
+        url: `/book/add/short_comment`, 
+        method: "POST", 
+        data: {
+          book_id,
+          content
+        },
+        success: resolve })
+    })
+  },
+
+  search(offset, keyword) {
+    return new Promise((resolve, reject) => {
+      Http.request({ 
+        url: '/book/search',
+        data: {
+          start: offset,
+          q: keyword
+        },
+        success: resolve
+      })
+    })
   }
 }
 

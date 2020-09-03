@@ -1,5 +1,6 @@
 // pages/book-detail/book-detail.js
 const { BookModel } = require('../../models/index')
+const { getShortComment } = require('../../models/book_model')
 
 Page({
 
@@ -9,7 +10,9 @@ Page({
   data: {
     book_id: -1,
     comment: [],
-    book: {}
+    book: {},
+    favor: {},
+    posting: false
   },
 
   /**
@@ -17,63 +20,42 @@ Page({
    */
   onLoad: function (options) {
     let book_id = this.data.book_id = options.bid
-    BookModel.getShortComment(book_id)
-    .then(comment => {
-      this.setData({ comment: comment.comments })
-    })
-      
-    BookModel.getBookDetail(book_id)
-    .then(book => {
-      this.setData({ book })
-    })
+
+    let comment = BookModel.getShortComment(book_id),
+        book = BookModel.getBookDetail(book_id),
+        favor = BookModel.getBookfavor(book_id)
+
+    wx.showLoading({ title: '加载中...' })
+    Promise.all([comment, book, favor])
+      .then(results => {
+        this.setData({ 
+          comment: results[0].comments,
+          book: results[1],
+          favor: results[2]
+        })
+        wx.hideLoading()
+      })    
   },  
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  onPostHandle(event) {
+    let comment = event.detail.tag
+    BookModel.postComment(this.data.book_id, comment)
+      .then(rse => {
+        wx.showToast({ title: '+ 1' })
+        this.data.comment.unshift({
+          content: comment,
+          nums: 1
+        })
 
+        this.setData({
+          comment: this.data.comment,
+          posting: false
+        })
+      })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onSwitchPostHandle(event) {
+    let posting = this.data.posting
+    this.setData({ posting: !posting })
   }
 })

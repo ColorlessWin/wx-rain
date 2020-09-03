@@ -1,0 +1,63 @@
+/* components/search/index.wxss */
+.header {
+  position: fixed;
+  top: 0;
+  height: 100rpx;
+  padding: 0 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  background-color: white;
+  z-index: 98;
+}
+
+.contanier {
+  padding-top: 100rpx;
+}
+
+.header .search-box {
+  height: 60rpx;
+  width: 550rpx;
+  padding-left: 40rpx;
+  border-radius: 34rpx;
+  background-color: #f5f5f5;
+  color: #999999;
+  font-size: 25rpx;
+
+  display: flex;
+  align-items: center;
+}
+
+.header .input-box {
+  width: 510rpx;
+}
+
+.header .cancel {
+  margin-left: 30rpx;
+}
+
+.header .search-icon {
+  position: relative;
+  left: -20rpx;
+  width: 14px;
+  height: 14px;
+}
+
+.keyword {
+  padding: 40rpx 30rpx 10rpx 30rpx;
+}
+
+.keyword .title {
+  display: block;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding-left: 10rpx;
+  border-left: 10rpx solid black;
+}
+
+.keyword .content {
+  padding: 20rpx 15rpx 15rpx 10rpx;
+  min-height: 150rpx;
+}

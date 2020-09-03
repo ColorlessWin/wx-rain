@@ -1,5 +1,5 @@
 <!--components/tag/index.wxml-->
-<view class="contanier">
+<view bind:tap="onTapHandle" class="contanier">
   <slot name="before"></slot>
   <text class="content">{{ content }}</text>
   <slot name="after"></slot>

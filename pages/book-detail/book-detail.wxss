@@ -5,6 +5,7 @@
 
 .contanier {
   background-color: #f5f5f5;
+  padding-bottom: 110rpx;
 }
 
 .contanier .block {
@@ -12,6 +13,10 @@
   margin-bottom: 30rpx;
   padding: 15rpx 25rpx 10rpx 25rpx;
   background-color: white;
+}
+
+.block:last-child {
+  margin-bottom: 0rpx;
 }
 
 .contanier .block .title {
@@ -57,4 +62,73 @@
 
 .desription .col .row.info {
   color: black;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.post-fake, .post-comment {
+  background-color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.post-fake, .post-comment {
+  box-shadow: 1px -1px 2px #e3e3e3;
+}
+
+.post-fake {
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: 0rpx 20rpx;
+}
+
+.post-fake .input-fake {
+  height: 60rpx;
+  width: 70%;
+  background-color: #f5f5f5;
+  color: #999999;
+  border-radius: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+
+.post-comment {
+  box-sizing: border-box;
+  padding: 0 20rpx;
+}
+
+.post-comment .top {
+  height: 115rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #999999;
+  font-size: 28rpx;
+}
+
+.post-comment .bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #f5f5f5;
+  padding: 25rpx 0;
+}
+
+.post-comment .tip {
+  width: 694rpx;
+  height: 130rpx;
+  margin-top: 25rpx;
 }

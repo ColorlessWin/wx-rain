@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "format-text-cmp": "/components/format-text",
-    "short-comment-cmp": "/components/book/short-comment" 
+    "short-comment-cmp": "/components/book/short-comment",
+    "like-cmp": "/components/like",
+    "mask-cmp": "/components/mask"
   }
 }

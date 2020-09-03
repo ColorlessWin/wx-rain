@@ -1,0 +1,2 @@
+<!--components/mask/index.wxml-->
+<view wx:if="{{ enable }}" class="mask"></view>

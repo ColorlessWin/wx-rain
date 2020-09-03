@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "book-list-cmp": "/components/book/book-list"
+    "book-list-cmp": "/components/book/book-list",
+    "search-panel": "/components/search"
   }
 }

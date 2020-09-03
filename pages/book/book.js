@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    books: {}
+    books: {},
+    searching: false,
   },
 
   /**
@@ -17,6 +18,10 @@ Page({
     BookModel.getHotBooks().then(books => {
       this.setData({ books })
     })
+  },
+
+  onSearchSwitchHandle() {
+    this.setData({ searching: !this.data.searching })
   },
 
   /**

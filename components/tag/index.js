@@ -24,6 +24,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onTapHandle(event) {
+      this.triggerEvent('click', { tag: this.properties.content })
+    }
   }
 })

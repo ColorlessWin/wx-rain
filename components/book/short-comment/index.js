@@ -6,6 +6,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+    limit: {
+      type: Number,
+      value: 10
+    },
     comments: {
       type: Array,
       value: []
@@ -15,8 +19,9 @@ Component({
   created() {
     computed(this, {
       shortCmt() {
+        let limit = this.properties.limit
         let comments = this.properties.comments
-        return comments.slice(0, 12)
+        return comments.slice(0, limit)
       }
     })
   },
@@ -32,6 +37,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onTagClickHandle(event) {
+      this.triggerEvent('tagclick', { tag: event.detail.tag })
+    }
   }
 })

@@ -1,0 +1,35 @@
+<!--components/search/index.wxml-->
+<view class="search-contanier">
+  <view class="header">
+    <view class="search-box">
+      <image class="search-icon" src="../../images/icon/search.png"></image>
+      <input bind:confirm="onConfirmHandle" class="input-box" placeholder="书籍名"></input>
+    </view>
+    <text bind:tap="onCancelHandle" class="cancel">取消</text>
+  </view>
+  <view class="contanier">
+    <view wx:if="{{ !searching }}" class="keyword">
+      <text class="title">历史搜索</text>
+      <view class="content">
+        <tag-cmp 
+          bind:click="onConfirmHandle"
+          wx:for="{{ historyWords }}" 
+          wx:key="item" 
+          content="{{ item }}"
+        />
+      </view>
+      <text class="title">热门搜索</text>
+      <view class="content">
+        <tag-cmp 
+          bind:click="onConfirmHandle"
+          wx:for="{{ hotWords }}" 
+          wx:key="item" 
+          content="{{ item }}"
+        />
+      </view>
+    </view>
+    <view wx:if="{{ searching }}" class="books">
+      <book-list-cmp books="{{ searchResults }}"/>
+    </view>
+  </view>
+</view>

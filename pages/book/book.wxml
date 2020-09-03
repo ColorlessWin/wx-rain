@@ -1,7 +1,7 @@
 <!--pages/book/book.wxml-->
-<view>
+<view wx:if="{{ !searching }}">
   <view class="header">
-    <view class="search-box">
+    <view bind:tap="onSearchSwitchHandle" class="search-box">
       <image class="search-icon" src="/images/icon/search.png"></image>
       <text>搜索书籍</text>
     </view>
@@ -11,3 +11,7 @@
     <book-list-cmp books="{{ books }}"/>
   </view>
 </view>
+<search-panel 
+  bind:close="onSearchSwitchHandle" 
+  wx:if="{{ searching }}"
+/>

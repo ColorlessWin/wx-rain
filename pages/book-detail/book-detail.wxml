@@ -38,4 +38,26 @@
         </view>
       </view>
   </view>
+  <view class="footer">
+    <view bind:tap="onSwitchPostHandle" class="post-fake">
+      <view class="input-fake">输入短评</view>
+      <like-cmp />
+    </view>
+    <view wx:if="{{ posting }}" class="post-comment">
+      <view class="top">
+        <text>仅可点击标签加+1</text>
+        <text bind:tap="onSwitchPostHandle" class="cancal">取消</text>
+      </view>
+      <view class="bottom">
+        <short-comment-cmp 
+          bind:tagclick="onPostHandle" 
+          comments="{{ comment }}" 
+          limit="{{ 3 }}"
+        />
+        <image class="tip" src="./images/tip.png"></image>
+      </view>
+    </view>
+  </view>
+  <mask-cmp enable="{{ posting }}" />
 </view>
+
