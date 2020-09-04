@@ -1,5 +1,6 @@
 // pages/book/book.js
-const { BookModel } = require('../../models/index')
+(function(){ require = getApp().require })()
+const { BookModel } = require('models/index')
 
 Page({
 
@@ -63,7 +64,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**

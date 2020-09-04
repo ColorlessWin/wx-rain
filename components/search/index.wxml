@@ -3,11 +3,16 @@
   <view class="header">
     <view class="search-box">
       <image class="search-icon" src="../../images/icon/search.png"></image>
-      <input bind:confirm="onConfirmHandle" class="input-box" placeholder="书籍名"></input>
+      <input 
+        value="{{ keyword }}" 
+        bind:confirm="onConfirmHandle" 
+        class="input-box" 
+        placeholder="书籍名">
+      </input>
     </view>
     <text bind:tap="onCancelHandle" class="cancel">取消</text>
   </view>
-  <view class="contanier">
+  <view wx:if="{{ !empty }}" class="contanier">
     <view wx:if="{{ !searching }}" class="keyword">
       <text class="title">历史搜索</text>
       <view class="content">
@@ -29,7 +34,10 @@
       </view>
     </view>
     <view wx:if="{{ searching }}" class="books">
-      <book-list-cmp books="{{ searchResults }}"/>
+      <scroll-view scroll-y bind:scrolltolower="OnTolowerHandle" class="scroll-view">
+        <book-list-cmp books="{{ datas }}"/>
+      </scroll-view>
     </view>
   </view>
+  <view class="empty-tip" wx:if="{{ empty }}"> 没有搜索到相关书籍 </view>
 </view>

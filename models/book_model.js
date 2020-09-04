@@ -38,11 +38,12 @@ const BookModel = {
     })
   },
 
-  search(offset, keyword) {
+  search(offset, limit, keyword) {
     return new Promise((resolve, reject) => {
       Http.request({ 
         url: '/book/search',
         data: {
+          count: limit,
           start: offset,
           q: keyword
         },

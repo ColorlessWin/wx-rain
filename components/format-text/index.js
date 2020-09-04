@@ -1,5 +1,6 @@
 // components/format-text/index.js
-const { computed } = require('../../extends/index')
+(function(){ require = getApp().require })()
+const { computed } = require('extends/index')
 
 Component({
   /**

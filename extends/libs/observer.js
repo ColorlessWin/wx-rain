@@ -2,25 +2,18 @@ const __OBS_CAPTURE__ = Symbol('captures')
 const __OBS_REACTIVE__ = Symbol('reactives')
 
 function getReactives(obj, key) {
-  let __reactives = obj[__OBS_REACTIVE__]
-    ? obj[__OBS_REACTIVE__]
+  let __reactives = obj[__OBS_REACTIVE__] ? obj[__OBS_REACTIVE__]
     : obj[__OBS_REACTIVE__] = { }  
-  let r_calls = __reactives[key]
-    ? __reactives[key]
+  let r_calls = __reactives[key]? __reactives[key]
     : __reactives[key] = []  
-
   return r_calls  
 }
 
 function getCaptures(obj, key) {
-  let __captures = obj[__OBS_CAPTURE__] 
-    ? obj[__OBS_CAPTURE__]
+  let __captures = obj[__OBS_CAPTURE__]? obj[__OBS_CAPTURE__]
     : obj[__OBS_CAPTURE__] = { }
-
-  let c_calls = __captures[key]
-    ? __captures[key]
+  let c_calls = __captures[key]? __captures[key]
     : __captures[key] = []
-
   return c_calls  
 }
 
@@ -56,10 +49,7 @@ function defineObserver(obj, key, reactive, capture) {
 
 function clearObserver(obj) {
   [obj[__OBS_CAPTURE__], obj[__OBS_REACTIVE__]].forEach(obs => {
-    obs && Object.keys(obs).forEach(field => {
-      obs[field].splice(0, obs[field].length)
-      delete obs[field]
-    })
+    obs && Object.keys(obs).forEach(field => delete obs[field])
   })
   delete obj[__OBS_CAPTURE__]
   delete obj[__OBS_REACTIVE__]

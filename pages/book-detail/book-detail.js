@@ -1,6 +1,7 @@
 // pages/book-detail/book-detail.js
-const { BookModel } = require('../../models/index')
-const { getShortComment } = require('../../models/book_model')
+(function(){ require = getApp().require })()
+const { BookModel } = require('models/index')
+const { getShortComment } = require('models/book_model')
 
 Page({
 

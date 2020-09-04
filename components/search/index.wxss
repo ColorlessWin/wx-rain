@@ -61,3 +61,13 @@
   padding: 20rpx 15rpx 15rpx 10rpx;
   min-height: 150rpx;
 }
+
+.scroll-view {
+  height: calc(100vh - 100rpx); 
+}
+
+.empty-tip {
+  text-align: center;
+  margin-top: 400rpx;
+  color: #9e9e9e;
+}

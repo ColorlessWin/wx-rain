@@ -1,5 +1,6 @@
 // pages/classic.js
-const { ClassicModel, LikeModel } = require('../../models/index')
+(function(){ require = getApp().require })()
+const { ClassicModel, LikeModel } = require('models/index')
 
 Component ({
   /**
