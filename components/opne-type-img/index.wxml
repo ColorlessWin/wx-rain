@@ -1,0 +1,13 @@
+<!--components/opne-type-img/index.wxml-->
+<button 
+  class="button"
+  open-type="{{ openType }}" 
+  bind:getuserinfo="onClickHandle"
+  bind:getphonenumber="onClickHandle"
+  bind:contact="onClickHandle"
+  bind:opensetting='onClickHandle'
+  bind:launchapp="onClickHandle"
+  bind:error="onErrorHandle"
+  plain="{{ true }}">
+  <slot name="img"> </slot>
+</button>

@@ -25,6 +25,12 @@ const BookModel = {
     })
   },
 
+  getBookfavorCount() {
+    return new Promise((resolve, reject) => {
+      Http.request({ url: '/book/favor/count', success: resolve })
+    })
+  },
+
   postComment(book_id, content) {
     return new Promise((resolve, reject) => {
       Http.request({ 

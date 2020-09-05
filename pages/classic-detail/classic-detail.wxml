@@ -1,0 +1,14 @@
+<!--pages/classic-detail/classic-detail.wxml-->
+<view class="contanier">
+  <view class="header">
+    <episode-cmp index="{{ classic.index }}"/>
+    <like-cmp 
+      bind:like="onLikeHandle"
+      liked="{{ classic.like_status }}" 
+      count="{{ classic.fav_nums }}" 
+    />
+  </view>
+  <view class="content">
+    <periodical-switch classic="{{ classic }}" type="{{ classic.type }}"/>
+  </view>
+</view>

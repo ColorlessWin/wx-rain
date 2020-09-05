@@ -1,1 +1,83 @@
 /* pages/my/my.wxss */
+.contanier {
+  background-color: #f5f5f5;
+}
+
+.about {
+  position: relative;
+}
+
+.about .bg {
+  width: 100%;
+  height: 574rpx;
+}
+
+.about .avater {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.about .avater-pos {
+  position: absolute;
+  top: 257rpx;
+  left: 50%;  
+  margin-left: -60rpx;
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 30rpx;  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 110rpx;
+}
+
+.footer .about-icon {
+  width: 34rpx;
+  height: 34rpx;
+  padding-bottom: 10rpx;
+}
+
+.footer .label {
+  font-size: 25rpx;
+  color: #bdbdbd;
+}
+
+.footer .item .item-top {
+  display: inline-block;
+  margin-bottom: 15rpx;
+}
+
+.favor-books {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx 35rpx
+}
+
+.book-item {
+  margin-bottom: 35rpx;
+}
+
+.like-label {
+  margin-top: 30rpx;
+  width: 97rpx;
+  height: 42rpx;
+}

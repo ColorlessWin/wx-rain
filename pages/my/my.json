@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "open-type-img": "/components/opne-type-img",
+    "preview-cmp": "/components/preview"
+  }
 }

@@ -1,0 +1,7 @@
+/* components/opne-type-img/index.wxss */
+.button {
+  padding: 0 !important;
+  border:none !important;
+  height: 100% !important;
+  width: 100% !important;
+}

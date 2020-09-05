@@ -24,6 +24,11 @@ const resolve = function(callback) {
 }
 
 const ClassicModel = {
+
+  getClassic(type, id, callback) {
+    Http.request({ url: `/classic/${type}/${id}`, success: callback })
+  },
+
   getLatest(callback) {
     let _callback = function(result, ...args) {
       latest = result.index
@@ -49,6 +54,10 @@ const ClassicModel = {
       callback = resolve(callback)
       Http.request({ url: `/classic/${index}/previous`, success: callback })
     }
+  },
+
+  getFavor(callback) {
+    Http.request({ url: `/classic/favor`, success: callback })
   },
 
   isLatest(index) {

@@ -1,2 +1,30 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="contanier">
+  <view class="about">
+    <image class="bg" src="../../images/my/my@bg.png"></image>
+    <open-type-img 
+      class="avater avater-pos" 
+      open-type="getUserInfo"
+      bind:getuserinfo="onGetUserInfo">
+      <image slot="img" class="avater" src="{{ authorized? userInfo.avatarUrl: unAuthSrc }}"></image>
+    </open-type-img>
+    <view class="footer">
+      <view class="about-my item">
+        <image class="about-icon item-top" src="../../images/my/about.png"></image>
+        <text class="label">关于我们</text>
+      </view> 
+      <view class="like-book item">
+        <view class="b-count item-top">{{ likeCount }}</view>
+        <text class="label">喜欢的书</text>
+      </view>
+    </view>
+  </view>
+  <view class="favor-books">
+    <image class="like-label" src="../../images/my/like.png"></image>
+    <view class="book-list">
+      <block wx:for="{{ favor }}" wx:key="index">
+        <preview-cmp class="book-item" classic="{{ item }}" />
+      </block>
+    </view>
+  </view>
+</view>
